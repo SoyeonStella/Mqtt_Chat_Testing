@@ -34,28 +34,26 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.chatEditText)
     EditText chatEditText;
 
-    @BindView(R.id.idEditText)
-    EditText idEditText;
 
     @OnClick(R.id.chatSendButton)
     public void sendChat(){
-        String tmpId = idEditText.getText().toString();
+
         //String currentUserId = "";
-        if(!tmpId.equals("")) {
-            if(tmpId.equals("Soyeon") || tmpId.equals("Siru")) {
+        //if(!tmpId.equals("")) {
+        //    if(tmpId.equals("Soyeon") || tmpId.equals("Siru")) {
                 currentUserId = mqttClient1.getClientId();
-                idEditText.setEnabled(false);
-            }
-            else if(tmpId.equals("Sumin")) {
+        //        idEditText.setEnabled(false);
+        //    }
+        //    else if(tmpId.equals("Sumin")) {
                 currentUserId = mqttClient1.getClientId();
-                idEditText.setEnabled(false);
-            }
-            else {
-                idEditText.setText("존재하지않는 id");
-            }
-        } else {
-            idEditText.setHintTextColor(Color.RED);
-        }
+        //        idEditText.setEnabled(false);
+        //    }
+        //    else {
+        //        idEditText.setText("존재하지않는 id");
+        //    }
+        //} else {
+        //    idEditText.setHintTextColor(Color.RED);
+        //}
         String content = chatEditText.getText().toString();
         if(content.equals("")){ }
         else{
